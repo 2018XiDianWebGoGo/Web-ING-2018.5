@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>测试</title>
+<title>{% block title %}{% endblock%}</title>
 <link rel="stylesheet" href="//lib.baomitu.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="//lib.baomitu.com/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" crossorigin="anonymous">
 <script src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
@@ -15,11 +15,11 @@ body, button, input, select, textarea {
 	font-size: 17px;
 }
 
-
+{% block css %}{% endblock%}
 </style>
 </head>
 
 <body>
-
+{% block content %}{% endblock%}
 </body>
 </html>
