@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}文章列表{% endblock%}
+{% block css %}
+@media (min-width: 792px) {
+.container-fluid {
+	width: 770px;
+}
+}
+{% endblock%}
+{% block content %}
+		<div class="container-fluid">
+			<h3><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 此处为用户名<div class="pull-right"><a href="/detail"><span class="glyphicon glyphicon-user"></span></a></div></h3>
+		</div>
+		<hr style="height:3px;border:none;border-top:3px groove deepskyblue;" />
+		<!--分隔线-->
+
+		<div class="container-fluid">
+			<div class="row text-center">
+				<div class="col-xs-12">
+					<div class="list-group">
+
+						<div class="list-group-item" style="border: 0;">
+							<a href="#">
+								<h4>Flask简介</h4></a>
+							<p>
+								<small>发布时间: 2018-5-14</small>
+								<small>&nbsp;&nbsp;作者:百度百科</small>
+							</p>
+							<p class="text-muted text-left">Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Jinja2 。Flask使用 BSD 授权。 Flask也被称为 “microframework” ，因为它使用简单的核心，用 extension 增加其他功能。Flask没有默认使用的数据库、窗体验证工具。</p>
+						</div>
+						<div style="border: 1px dashed #ddd;"></div>
+						{% for blog in blogs%}
+						<div class="list-group-item" style="border: 0;">
+							<a href="#">
+								<h4>{{blog.title}}</h4></a>
+							<p>
+								<small>发布时间: {{blog.created_date}}</small>
+								<small>&nbsp;&nbsp;作者:{{blog.user.username}}</small>
+							</p>
+							<p class="text-muted text-left">{{blog.content}}</p>
+						</div>
+						<div style="border: 1px dashed #ddd;"></div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock%}
