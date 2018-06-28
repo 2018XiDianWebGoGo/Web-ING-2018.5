@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}登录{% endblock%}
+{% block css %}
+@media (min-width: 430px) {
+.container-fluid {
+	width: 408px;
+}
+}
+{% endblock%}
+{% block content %}
+<div class="container-fluid">
+  <h3>
+    {% if (msg | length) == 0%}登录{% else %}
+      <b>{{msg}}</b>
+  {% endif %}
+  </h3>
+</div>
+<hr style="height:3px;border:none;border-top:3px groove deepskyblue;" />
+<!--分隔线-->
+
+<div class="container-fluid">
+<form class="form-horizontal" id="login" name="login" role="form" method="post">
+  <div class="form-group">
+    <label for="inputEmail" class="col-sm-2 control-label">账号</label>
+    <div class="col-sm-10">
+      <input type="email" required="required" class="form-control" id="inputEmail" name="account" placeholder="请输入您的邮箱地址">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col-sm-2 control-label">密码</label>
+    <div class="col-sm-10">
+      <input type="password" required="required" class="form-control" id="inputPassword" name="password" placeholder="请输入您的密码">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary" onclick="form=document.getElementById('login');form.action='/log/';">登录</button>
+	  <!--<button type="button" class="btn btn-link pull-right"><a href="./register.html">注册账号</a></button>-->
+	  <a type="button" class="btn btn-link pull-right" href="/register">注册账号</a>
+    </div>
+	
+  </div>
+  
+</form>
+</div>
+{% endblock%}

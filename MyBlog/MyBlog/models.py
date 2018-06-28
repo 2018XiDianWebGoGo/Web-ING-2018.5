@@ -1,10 +1,11 @@
 # -*- encoding=UTF-8 -*-
 
-from MyBlog import db
+from MyBlog import db, login_manager
 from datetime import datetime
 
 
 class Blog(db.Model):
+    __table_args__ = {'mysql_collate': 'utf8_general_ci'}
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # 数据库中的一列，整数类型，主键，自增长
     title = db.Column(db.String(160))
     content = db.Column(db.Text)
@@ -24,15 +25,40 @@ class Blog(db.Model):
 
 
 class User(db.Model):
+    __table_args__ = {'mysql_collate': 'utf8_general_ci'}
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # 数据库中的一列，整数类型，主键，自增长
     username = db.Column(db.String(80), unique=True)
-    password = db.Column(db.String(30), unique=True)
+    password = db.Column(db.String(80))
+    salt = db.Column(db.String(32))  # 盐
     blogs = db.relationship('Blog', backref='user', lazy='dynamic')  # 关联表，User对象可以通过.blogs查询它的所有Blog，加上backref='user'表示允许Blog通过.user来查询对应的User
 
-    def __init__(self, username, password):  # 此处的self，是个对象（Object），是当前类的实例
+    def __init__(self, username, password, salt=''):  # 此处的self，是个对象（Object），是当前类的实例
         self.username = username
         self.password = password
+        self.salt = salt
         # id是自动生成的
 
     def __repr__(self):  # 返回一个可以用来表示对象的可打印字符串
         return '<User %d %s>' % (self.id, self.username)
+
+    # Flask Login接口
+    def is_authenticated(self):
+        print 'is_authenticated'
+        return True
+
+    def is_active(self):
+        print 'is_active'
+        return True
+
+    def is_anonymous(self):
+        print 'is_anonymous'
+        return False
+
+    def get_id(self):
+        print 'get_id'
+        return self.id
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
