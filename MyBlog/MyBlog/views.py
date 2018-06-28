@@ -11,7 +11,24 @@ def index():
     return render_template('index.html', blogs=blogs)
 
 
-@app.route('/profile')  # 首页
+@app.route('/profile')
 def profile():
-    blogs = Blog.query.order_by(db.desc(Blog.id)).limit(10).all()
+    blogs = Blog.query.order_by(db.desc(Blog.id)).all()
     return render_template('profile.html', blogs=blogs)
+
+
+@app.route('/profile/<int:user_id>/')
+def otherProfile(user_id):
+    user = User.query.get(user_id)
+    if user == None:
+        return redirect('/')
+    blogs = Blog.query.filter_by(user_id=user_id).order_by(db.desc(Blog.id)).all()
+    return render_template('otherProfile.html', user=user, blogs=blogs)
+
+
+@app.route('/article/<int:blog_id>/')
+def article(blog_id):
+    blog = Blog.query.get(blog_id)
+    if blog == None:
+        return redirect('/')
+    return render_template('pageDetail.html', blog=blog)

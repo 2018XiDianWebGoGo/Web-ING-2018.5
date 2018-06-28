@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}文章列表{% endblock%}
+{% block title %}{{blog.title}}{% endblock%}
 {% block css %}
 @media (min-width: 792px) {
 .container-fluid {
@@ -9,7 +9,7 @@
 {% endblock%}
 {% block content %}
 		<div class="container-fluid">
-			<h3><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{user.username}}<div class="pull-right"><a href="/detail"><span class="glyphicon glyphicon-user"></span></a></div></h3>
+			<h3><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{blog.title}}<div class="pull-right"><a href="/detail"><span class="glyphicon glyphicon-user"></span></a></div></h3>
 		</div>
 		<hr style="height:3px;border:none;border-top:3px groove deepskyblue;" />
 		<!--分隔线-->
@@ -18,18 +18,15 @@
 			<div class="row text-center">
 				<div class="col-xs-12">
 					<div class="list-group">
-						{% for blog in blogs%}
+
 						<div class="list-group-item" style="border: 0;">
-							<a href="#">
-								<h4>{{blog.title}}</h4></a>
 							<p>
 								<small>发布时间: {{blog.created_date}}</small>
 								<small>&nbsp;&nbsp;作者:{{blog.user.username}}</small>
 							</p>
-							<p class="text-muted text-left">{{blog.content}}</p>
+							<p class="text-left">{{blog.content}}</p>
 						</div>
-						<div style="border: 1px dashed #ddd;"></div>
-						{% endfor %}
+
 					</div>
 				</div>
 			</div>
