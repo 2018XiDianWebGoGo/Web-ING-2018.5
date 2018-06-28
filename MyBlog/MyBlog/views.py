@@ -32,3 +32,8 @@ def article(blog_id):
     if blog == None:
         return redirect('/')
     return render_template('pageDetail.html', blog=blog)
+
+
+@app.route('/add')
+def add():
+    return render_template('add.html')
