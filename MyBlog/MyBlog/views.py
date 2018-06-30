@@ -44,6 +44,18 @@ def add():
     return render_template('add.html')
 
 
+@app.route('/addblog/', methods={'get', 'post'})
+@login_required
+def addblog():
+    title = request.values.get('articlename')
+    content = request.values.get('editor1')
+    user_id = current_user.id
+    blog = Blog(title, content, user_id)
+    db.session.add(blog)
+    db.session.commit()
+    return redirect('/profile')
+
+
 @app.route('/login/')
 def login():
     msg = ''
