@@ -53,8 +53,8 @@
       <file leaf-file-name="manage.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+            <state relative-caret-position="345">
+              <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
               <folding>
                 <element signature="e#26#52#0" expanded="true" />
               </folding>
@@ -374,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528988375384</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="修改manage.py">
+      <created>1528988697617</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1528988697617</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -424,7 +431,8 @@
     <MESSAGE value="首页文章标题可点击" />
     <MESSAGE value="添加富文本编辑器" />
     <MESSAGE value="首页文章富文本显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="首页文章富文本显示" />
+    <MESSAGE value="修改manage.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改manage.py" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/MyBlog/models.py">
@@ -852,8 +860,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        <state relative-caret-position="345">
+          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
             <element signature="e#26#52#0" expanded="true" />
           </folding>

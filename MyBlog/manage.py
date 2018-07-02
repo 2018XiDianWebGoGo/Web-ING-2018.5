@@ -21,12 +21,12 @@ def init_database():
     # db.session.add(Blog(get_blog_content(), get_blog_content(), 1))
     db.session.commit()  # 不能忘记，否则数据库中查不到！
     print 1, User.query.all()  # 查询全部
-    print 2, User.query.get(1)  # primary key = 1
-    print 3, User.query.get(1).blogs.all()  # 关联查询，打印用户对应的清单
-    a = User.query.get(1)
-    print 4, a.blogs.all()
-    b = Blog.query.get(1)
-    print 5, b.user
+    # print 2, User.query.get(1)  # primary key = 1
+    # print 3, User.query.get(1).blogs.all()  # 关联查询，打印用户对应的清单
+    # a = User.query.get(1)
+    # print 4, a.blogs.all()
+    # b = Blog.query.get(1)
+    # print 5, b.user
 
 
 if __name__ == '__main__':
