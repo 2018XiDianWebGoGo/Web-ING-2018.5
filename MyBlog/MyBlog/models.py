@@ -62,3 +62,21 @@ class User(db.Model):
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
+
+
+class Comment(db.Model):  # 第三张表：评论
+    __table_args__ = {'mysql_collate': 'utf8_general_ci'}
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    content = db.Column(db.String(1024))
+    blog_id = db.Column(db.Integer, db.ForeignKey('blog.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    status = db.Column(db.Integer, default=0) # 0 正常 1 被删除
+    user = db.relationship('User')  # 关联表
+
+    def __init__(self, content, blog_id, user_id):
+        self.content = content
+        self.blog_id = blog_id
+        self.user_id = user_id
+
+    def __repr__(self):
+        return '<Comment %d %s>' % (self.id, self.content)
