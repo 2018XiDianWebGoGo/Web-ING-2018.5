@@ -28,18 +28,20 @@ class User(db.Model):
     __table_args__ = {'mysql_collate': 'utf8_general_ci'}
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # 数据库中的一列，整数类型，主键，自增长
     username = db.Column(db.String(80), unique=True)
+    nickname = db.Column(db.String(80))
     password = db.Column(db.String(80))
     salt = db.Column(db.String(32))  # 盐
     blogs = db.relationship('Blog', backref='user', lazy='dynamic')  # 关联表，User对象可以通过.blogs查询它的所有Blog，加上backref='user'表示允许Blog通过.user来查询对应的User
 
-    def __init__(self, username, password, salt=''):  # 此处的self，是个对象（Object），是当前类的实例
+    def __init__(self, username, nickname, password, salt=''):  # 此处的self，是个对象（Object），是当前类的实例
         self.username = username
+        self.nickname = nickname
         self.password = password
         self.salt = salt
         # id是自动生成的
 
     def __repr__(self):  # 返回一个可以用来表示对象的可打印字符串
-        return '<User %d %s>' % (self.id, self.username)
+        return '<User %d %s %s>' % (self.id, self.username, self.nickname)
 
     # Flask Login接口
     def is_authenticated(self):

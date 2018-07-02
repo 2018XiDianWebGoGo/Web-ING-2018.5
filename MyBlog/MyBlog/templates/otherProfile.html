@@ -9,7 +9,7 @@
 {% endblock%}
 {% block content %}
 		<div class="container-fluid">
-			<h3><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{user.username}}<div class="pull-right"><a href="/profile"><span class="glyphicon glyphicon-user"></span></a></div></h3>
+			<h3><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{user.nickname}}<div class="pull-right"><a href="/profile"><span class="glyphicon glyphicon-user"></span></a></div></h3>
 		</div>
 		<hr style="height:3px;border:none;border-top:3px groove deepskyblue;" />
 		<!--分隔线-->
@@ -24,7 +24,7 @@
 								<h4>{{blog.title}}</h4></a>
 							<p>
 								<small>发布时间: {{blog.created_date}}</small>
-								<small>&nbsp;&nbsp;作者:{{blog.user.username}}</small>
+								<small>&nbsp;&nbsp;作者:{{blog.user.nickname}}</small>
 							</p>
 							<p class="text-muted text-left">{{blog.content}}</p>
 						</div>

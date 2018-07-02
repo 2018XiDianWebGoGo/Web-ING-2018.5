@@ -103,6 +103,7 @@ def log():
 @app.route('/reg/', methods={'get', 'post'})
 def reg():
     username = request.values.get('account').strip()  # strip() 方法用于移除字符串头尾指定的字符(默认为空格)
+    nickname = request.values.get('nickname').strip()
     password = request.values.get('password').strip()
 
     user = User.query.filter_by(username=username).first()
@@ -115,7 +116,7 @@ def reg():
     m = hashlib.md5()
     m.update(password+salt)
     password = m.hexdigest()
-    user = User(username, password, salt)
+    user = User(username, nickname, password, salt)
     db.session.add(user)
     db.session.commit()
 
