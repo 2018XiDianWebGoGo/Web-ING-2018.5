@@ -19,19 +19,11 @@
 				<div class="col-xs-12">
 					<div class="list-group">
 
-						<div class="list-group-item" style="border: 0;">
-							<a href="#">
-								<h4>Flask简介</h4></a>
-							<p>
-								<small>发布时间: 2018-5-14</small>
-								<small>&nbsp;&nbsp;作者:百度百科</small>
-							</p>
-							<p class="text-muted text-left">Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Jinja2 。Flask使用 BSD 授权。 Flask也被称为 “microframework” ，因为它使用简单的核心，用 extension 增加其他功能。Flask没有默认使用的数据库、窗体验证工具。</p>
-						</div>
+
 						<div style="border: 1px dashed #ddd;"></div>
 						{% for blog in blogs%}
 						<div class="list-group-item" style="border: 0;">
-							<a href="#">
+							<a href="/article/{{blog.id}}">
 								<h4>{{blog.title}}</h4></a>
 							<p>
 								<small>发布时间: {{blog.created_date}}</small>
