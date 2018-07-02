@@ -15,7 +15,7 @@
 		<!--分隔线-->
 
 		<div class="container-fluid">
-			<div class="row text-center">
+			<div class="row">
 				<div class="col-xs-12">
 					<div class="list-group">
 
@@ -23,13 +23,13 @@
 						<div style="border: 1px dashed #ddd;"></div>
 						{% for blog in blogs%}
 						<div class="list-group-item" style="border: 0;">
-							<a href="/article/{{blog.id}}">
+							<a class="text-center" href="/article/{{blog.id}}">
 								<h4>{{blog.title}}</h4></a>
-							<p>
+							<p class="text-center">
 								<small>发布时间: {{blog.created_date}}</small>
 								<small>&nbsp;&nbsp;作者:{{blog.user.nickname}}</small>
 							</p>
-							<p class="text-muted text-left">{{blog.content}}</p>
+							<p class="text-muted text-left">{{blog.content | safe}}</p>
 						</div>
 						<div style="border: 1px dashed #ddd;"></div>
 						{% endfor %}
