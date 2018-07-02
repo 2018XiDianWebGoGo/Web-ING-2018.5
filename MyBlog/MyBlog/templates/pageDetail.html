@@ -15,16 +15,16 @@
 		<!--分隔线-->
 
 		<div class="container-fluid">
-			<div class="row text-center">
+			<div class="row">
 				<div class="col-xs-12">
 					<div class="list-group">
 
 						<div class="list-group-item" style="border: 0;">
-							<p>
+							<p class="text-center">
 								<small>发布时间: {{blog.created_date}}</small>
 								<small>&nbsp;&nbsp;作者:{{blog.user.nickname}}</small>
 							</p>
-							<p class="text-left">{{blog.content}}</p>
+							<div>{{blog.content | safe}}</div>
 						</div>
 
 					</div>
