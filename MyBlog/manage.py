@@ -18,7 +18,7 @@ def init_database():
     db.create_all()  # 根据这个项目中已定义的数据类，在数据库中创建对应的表
     # 测试：创建一个用户
     db.session.add(User('123@123.com', 'haha', 'sdcxdfrd'))
-    db.session.add(Blog(get_blog_content(), get_blog_content(), 1))
+    # db.session.add(Blog(get_blog_content(), get_blog_content(), 1))
     db.session.commit()  # 不能忘记，否则数据库中查不到！
     print 1, User.query.all()  # 查询全部
     print 2, User.query.get(1)  # primary key = 1
