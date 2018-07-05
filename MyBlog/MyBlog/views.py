@@ -5,13 +5,16 @@ from models import Blog, User
 from flask import render_template, redirect, request, flash, get_flashed_messages
 import hashlib
 import random
+import re
+import sys
 from flask_login import login_user, logout_user, current_user, login_required
 
 
 @app.route('/')  # 首页
 def index():
+    blogs_three = Blog.query.order_by(Blog.id).limit(3).all()
     blogs = Blog.query.order_by(db.desc(Blog.id)).limit(10).all()
-    return render_template('index.html', blogs=blogs)
+    return render_template('index.html', blogs_three=blogs_three, blogs=blogs)
 
 
 @app.route('/profile')
@@ -47,10 +50,16 @@ def add():
 @app.route('/addblog/', methods={'get', 'post'})
 @login_required
 def addblog():
+    if sys.getdefaultencoding() != 'utf-8':
+        reload(sys)
+        sys.setdefaultencoding('utf-8')
     title = request.values.get('articlename')
     content = request.values.get('editor1')
+    dr = re.compile(r'<[^>]+>', re.S)
+    dd = dr.sub('', content)
+    content_outline = dd[0:135] + '……'
     user_id = current_user.id
-    blog = Blog(title, content, user_id)
+    blog = Blog(title, content, content_outline, user_id)
     db.session.add(blog)
     db.session.commit()
     return redirect('/profile')
