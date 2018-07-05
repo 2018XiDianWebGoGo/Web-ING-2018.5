@@ -31,7 +31,7 @@
 	{% for blog in blogs%}
       <figure>
         <ul>
-          <a href="/article/{{blog.id}}"><img src="/static/images/t02.jpg"><span>{{blog.title}}</span></a>
+          <a href="/article/{{blog.id}}"><img src="{{blog.image}}"><span>{{blog.title}}</span></a>
         </ul>
         <p><a href="/article/{{blog.id}}">{{blog.title}}</a></p>
         <figcaption>{{blog.content_outline}}</figcaption>

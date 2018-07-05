@@ -2,6 +2,11 @@
 
 from MyBlog import db, login_manager
 from datetime import datetime
+import random
+
+
+def get_image_url():
+    return '/static/img/' + str(random.randint(1, 150)) + '.jpg'
 
 
 class Blog(db.Model):
@@ -13,6 +18,7 @@ class Blog(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     created_date = db.Column(db.DateTime)
     created_date_outline = db.Column(db.String(20))
+    image = db.Column(db.String(30))
     status = db.Column(db.Integer, default=0)  # 0 正常 1删除
 
     def __init__(self, title, content, content_outline, user_id):
@@ -22,6 +28,7 @@ class Blog(db.Model):
         self.user_id = user_id
         self.created_date = datetime.now()  # 现在的时间
         self.created_date_outline = datetime.now().strftime("%m-%d")
+        self.image = get_image_url()
         # id是自动生成的
 
     def __repr__(self):  # 返回一个可以用来表示对象的可打印字符串
