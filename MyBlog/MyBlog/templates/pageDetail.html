@@ -27,9 +27,9 @@
 <article>
   <div class="container">
     <div class="banner">
-      <p data-scroll-reveal="enter top over 2s">{{blog.title}}</p>
-      <p data-scroll-reveal="enter left over 2s after 1s">发布时间: {{blog.created_date}}</p>
-      <p data-scroll-reveal="enter bottom over 2s after 2s">作者:{{blog.user.nickname}}</p>
+      <a href="/profile/{{blog.user.id}}"><p data-scroll-reveal="enter top over 2s">{{blog.title}}</p></a>
+      <a href="/profile/{{blog.user.id}}"><p data-scroll-reveal="enter left over 2s after 1s">发布时间: {{blog.created_date}}</p></a>
+      <a href="/profile/{{blog.user.id}}"><p data-scroll-reveal="enter bottom over 2s after 2s">作者:{{blog.user.nickname}}</p></a>
     </div>
     <div class="about left">
 	{{blog.content | safe}}
