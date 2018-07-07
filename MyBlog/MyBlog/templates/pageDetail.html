@@ -31,21 +31,8 @@
       <p data-scroll-reveal="enter left over 2s after 1s">发布时间: {{blog.created_date}}</p>
       <p data-scroll-reveal="enter bottom over 2s after 2s">作者:{{blog.user.nickname}}</p>
     </div>
-<div>{{blog.content | safe}}</div>
     <div class="about left">
-	<div>{{blog.content | safe}}</div>
-  <h2>Just about me</h2>
-    <ul>
-     <p>西安电子科技大学</p>
-<p>
-西安电子科技大学</p>
-<p>西安电子科技大学</p>
-<p>
-西安电子科技大学
-</p>
-    </ul>
-    <h2>About my blog</h2>
-    <p>域  名：</p>
+	{{blog.content | safe}}
 </div>
   </div>
   </aside>
