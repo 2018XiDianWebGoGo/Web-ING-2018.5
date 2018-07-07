@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>注册页面</title>
+<link href="css/base.css" rel="stylesheet">
+</head>
+<body oncontextmenu="return false;">
+  <header>
+    <div class="logo" data-scroll-reveal="enter right over 1s"><a href="/"><img src="images/logo.jpg"></a></div>
+    <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s"><a href="index.html"><span>首页</span><span class="en">Home</span></a><a href="about.html"><span>西安电子科技大学</span><span class="en">About</span></a><a href="manshenghuo.html"><span>西安电子科技大学</span><span class="en">Life</span></a><a href="mbfx.html"><span>西安电子科技大学</span><span class="en">Share</span></a><a href="saying.html"><span>留言</span><span class="en">Saying</span></a><a href="login.html"><span>登录</span><span class="en">Login</span></a></nav>
+  </header>
+  <article>
+    <div class="container">
+<table align = "center";>
+  <tr>
+    <td width="15%" height="500"> </td>
+    <td width="500" height="500" align="center" valign="top"><p>
+    <fieldset><legend>
+    <a style="font-size: 40px;font-weight: bold;">注册</a></legend>
+    <form action="" method="post" onclick="Rabbit();" id="watt">
+    <table width="80%" border="0" cellspacing="0" cellpadding="0">
+  <tr align="center" valign="middle">
+    <td height="50" colspan="2">
+     <a style="font-size: 28px; font-weight: bold;">基本信息<br>
+     </a></td>
+    </tr>
+  <tr>
+    <td width="30%" height="30" align="right" valign="middle">
+     用 户 名 ：
+    </td>
+    <td width="70%" height="30">  <input type="text" name="code" id="code" autofocus="autofocus" placeholder="账号为6~12位之间的数字或者字母" style="width:200px;">
+    <span id="codeInfo"></span>
+    </td>
+  </tr>
+  <tr>
+    <td height="30" align="right" valign="middle">登录密码 ：</td>
+    <td height="30">  <input type="password" id="password" name="password" placeholder="密码为8~12位之间的数字或者字母"   style="width:200px;">
+    <span id="passwordInfo"></span>
+    </td>
+  </tr>
+  <tr>
+    <td height="30" align="right" valign="middle">重输密码 ：</td>
+    <td height="30">  <input type="password" name="password2" id="password2" placeholder="密码为8~12位之间的数字或者字母" style="width:200px;">
+    <span id="password2Info"></span>
+    </td>
+  </tr>
+  <tr>
+    <td height="30" align="right" valign="middle">性    别 ：</td>
+    <td height="30">  <input type="radio" name="gender" id="man" value="man"><label for="man" style="cursor: pointer;">男</label>
+
+    <input type="radio" name="gender" id="woman" value="woman"><label for="woman" style="cursor: pointer;">女</label> <span id="genderInfo"></span></td>
+
+
+  </tr>
+  <tr>
+    <td height="30" align="right" valign="middle">年龄阶段 ：</td>
+    <td height="30">
+      <select id="age"  name="age" style="width:150px;">
+    <option value="">-请选择-</option>
+    <option value="01岁一20岁">-01岁一20岁-</option>
+    <option value="21岁一30岁">-21岁一30岁-</option>
+    <option value="31岁一30岁">-31岁一30岁-</option>
+    <option value="41岁一40岁">-41岁一40岁-</option>
+    <option value="51岁以上">-51岁以上-</option>
+    </select>
+     <span id="ageInfo"></span>
+
+    </td>
+  </tr>
+  <tr>
+    <td height="30" align="right" valign="middle">电子邮箱 ：</td>
+    <td height="30">
+      <input type="text" name="email" id="email" placeholder="请输入正确的电子邮箱"  style="width:200px;">
+      <span id="emailInfo"></span>
+    </td>
+  </tr>
+  </tr>
+  <tr>
+    <td height="50" colspan="2" align="center" valign="middle">
+      <input type="button" value="提交" id="submit" onclick="index();">
+
+      <input type="reset" value="清空" ></td>
+    </tr>
+</table>
+</form>
+    </fieldset>
+  </tr>
+  <tr>
+  </tr>
+</table>
+  </div>
+</article>
+<script>
+       /*
+      *账号验证
+      */
+      function checkCode() {
+        var result = true;
+        var code = document.getElementById('code').value;
+        if (code == '') {
+          document.getElementById('codeInfo').innerHTML = '<span style="color:red;">账号不能为空!</span>';
+          result = false;
+        }
+        else if (code.length <6 || code.length >12) {
+          document.getElementById('codeInfo').innerHTML = '<span style="color:red;">账号必须为6~12位之间!</span>';
+          result = false;
+        }
+        else if (!/^[0-9A-z]+$/.test(code)) {
+          document.getElementById('codeInfo').innerHTML = '<span style="color:red;">账号必须为数字或者字母组成!</span>';
+          result = false;
+        }else {
+          document.getElementById('codeInfo').innerHTML = '<span style="color:red;">成功!</span>';
+           result = true;
+        }
+
+        return result;
+      }
+
+
+      /*
+      *密码验证
+      */
+      function password(){
+        var result = true;
+        var password = document.getElementById('password').value;
+        if(!/^[0-9A-z]+$/.test(password)){
+             document.getElementById('passwordInfo').innerHTML = '<span style="color:red;">密码必须为数字或者字母组成!</span>';
+             result = false;
+        }else if(password.length < 8 || password.length > 12 || password == '') {
+          document.getElementById('passwordInfo').innerHTML = '<span style="color:red;">密码必须为8~12位之间!</span>';
+          result = false;
+        }
+        else {
+          document.getElementById('passwordInfo').innerHTML = '<span style="color:red;">成功!</span>';
+          result = true;
+        }
+        return result;
+      }
+        function password2(){
+        var result = true;
+        var password = document.getElementById('password').value;
+        var password2 = document.getElementById('password2').value;
+        if (password2 == ''){
+          document.getElementById('password2Info').innerHTML = '<span style="color:red;">请输入密码！</span>';
+          result = false;
+        }else if(password2 != password) {
+          document.getElementById('password2Info').innerHTML = '<span style="color:red;">两次密码输入不一致！</span>';
+          result = false;
+        }else {
+          document.getElementById('password2Info').innerHTML = '<span style="color:red;">成功!</span>';
+          result = true;
+        }
+        return result;
+      }
+      /*
+      *性别验证
+      */
+      function gender(){
+        var result = true;
+        var gender = document.getElementsByName('gender');
+        var genderCount = 0;
+        for (var i = 0; i < gender.length; i++) {
+          if (gender[i].checked) {
+            break;
+          } else {
+            genderCount++;
+          }
+        }
+        if (genderCount == gender.length) {
+          document.getElementById('genderInfo').innerHTML = '<span style="color:red;">性别不能为空！</span>';
+          result = false;
+        } else {
+          document.getElementById('genderInfo').innerHTML = '<span style="color:red;">成功!</span>';
+          result = true;
+        }
+        return result;
+      }
+       /*
+       * 年龄验证
+       */
+       function age(){
+        var result = true;
+        var age = document.getElementById('age').value;
+        if (age == '') {
+          document.getElementById('ageInfo').innerHTML = '<span style="color:red;">年龄选项不能为空！</span>';
+          result = false;
+        } else {
+          document.getElementById('ageInfo').innerHTML = '<span style="color:red;">成功!</span>';
+          result = true;
+        }
+        return result;
+       }
+      /*
+       * Email验证
+       */
+      function checkEmail() {
+        var result = true;
+        var emailDOM = document.getElementById('email').value;
+        if(emailDOM == ''){
+          document.getElementById('emailInfo').innerHTML = '<span style="color:red;">邮箱不能为空格！</span>';
+           result = false;
+        }
+        else if (!/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test(emailDOM)) {
+          document.getElementById('emailInfo').innerHTML = '<span style="color:red;">邮箱格式不正确！</span>';
+          result = false;
+        }
+        else {
+          document.getElementById('emailInfo').innerHTML = '<span style="color:red;">成功!</span>';
+          result = true;
+        }
+        return result;
+      }
+      /*
+      *表单的Submit验证
+      */
+      function Rabbit(){
+
+
+        var Rabit = new Array();
+        Rabit[0] = checkCode();//账号
+        Rabit[1] = password();//密码
+        Rabit[2] = password2();//重复密码
+        Rabit[3] = checkEmail();//电子邮箱
+        Rabit[4] = gender();//性别
+        Rabit[5] = age();//年龄
+        return Rabit;
+
+        //alert('请正确并完整的输入注册信息');
+      }
+      /**
+      *提交后的判断
+      */
+      function index(){
+        var w = new Array();
+        w = Rabbit();
+        var a = 0;
+        var s = 1;
+        for (var i = 0; i <= 5; i++) {
+          if(w[i]==true){
+          a++;console.warn(a);
+          }
+          console.warn(w[i]);
+        }
+
+        if (a == 6) {
+          window.location.href='Rabbit.html';
+        }
+        else{
+        alert('请按规定输入完整的注册资料！');
+        var Rabit;
+
+        Rabit = checkEmail();
+         if (Rabit == false) {
+          var emailfocus = document.getElementById('email');
+          emailfocus.focus();
+        }
+        Rabit = age();
+         if (Rabit == false) {
+          var agefocus = document.getElementById('age');
+          agefocus.focus();
+        }
+        Rabit = gender();
+         if (Rabit == false) {
+          var genderfocus = document.getElementById('man');
+          genderfocus.focus();
+        }
+
+
+        Rabit = password2();
+         if (Rabit == false) {
+          var password2focus = document.getElementById('password2');
+          password2focus.focus();
+        }
+        Rabit = password();
+        if (Rabit == false) {
+          var passwordfocus = document.getElementById('password');
+          passwordfocus.focus();
+        }
+        Rabit = checkCode();
+        if (Rabit == false) {
+          var codefocus = document.getElementById('code');
+          codefocus.focus();
+        }
+        }
+      }
+</script>
+</body>
+</html>
