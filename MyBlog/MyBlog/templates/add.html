@@ -1,54 +1,62 @@
-{% extends "base.html" %}
-{% block title %}个人页{% endblock%}
-{% block css %}
-@media (min-width: 992px) {
-.container-fluid {
-	width: 970px;
-}
-}
-.nav-pills >li.active> a, .nav-pills >li.active>a:hover, .nav-pills >li.active>a:focus {
-	color: #fff;
-	background-color: #5069C4;
-}
-{% endblock%}
-{% block content %}
-<div class="container-fluid">
-  <h3>个人页<div class="pull-right"><a href="/profile"><span class="glyphicon glyphicon-user"></span></a></div></h3>
-</div>
-<hr style="height:3px;border:none;border-top:3px groove deepskyblue;" />
-<!--分隔线-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>添加文章</title>
+<meta name="keywords" content="添加文章" />
+<meta name="description" content="添加文章" />
+<script src="//lib.baomitu.com/ckeditor/4.9.2/ckeditor.js" crossorigin="anonymous"></script>
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/book.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="/static/js/modernizr.js"></script>
+<![endif]-->
+<script src="/static/js/scrollReveal.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo" data-scroll-reveal="enter right over 1s"><a href="/"><img src="/static/images/logo.png" width="80px"></a></div>
+  <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s">
+   <a href="/"><span>首页</span><span class="en">Home</span></a>
+   <a href="/profile"><span>我的博客</span><span class="en">Profile</span></a>
+   <a href="/add"><span>发布文章</span><span class="en">Add</span></a>
+   {% if current_user.is_authenticated %}<a href="/logout"><span>退出登录</span><span class="en">Logout</span></a>{% else %}<a href="/login"><span>登录/注册</span><span class="en">Login</span></a>{% endif %}
+  </nav>
+</header>
+<article>
+  <div class="container">
+    <h2 class="ctitle"><b>添加文章</b> <span>您的昵称：{{current_user.id}}</span></h2>
+    <div class="gbook">
+      <div class="about">
+        <div class="about_girl"><span><a href="/"><img src="/static/images/girl.jpg"></a></span>
+          <p>在这里写下你的文章吧！</p>
+        </div>
+<form method="post" action="/addblog/">
+标题：<input type="text" required="required"  id="articlename" name="articlename" placeholder="请输入标题" style="width:20000px;height:40px;color:black"/>
+<br/>
+    <textarea class="ckeditor" required="required" rows="3" name="editor1" id="editor1"></textarea>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="span2  col-xs-12 col-sm-3 col-md-4">
-      <ul class="nav nav-pills nav-stacked">
-        <!--nav-pills是胶囊导航 nav-stacked是垂直导航-->
-        <li><a href="/profile">我的文章</a></li>
-        <li><a href="/delete">删除文章</a></li>
-        <li class="active"><a href="#">添加文章</a></li>
-      </ul>
-    </div>
-    <div class="col-xs-12 col-sm-9 col-md-8">
-      <form class="form-horizontal"  role="form" method="post" action="/addblog/">
-  <div class="form-group">
-    <label for="articlename" class="col-sm-2 control-label">标题</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" required="required" id="articlename" name="articlename" placeholder="请输入标题">
-    </div>
-  </div>
 
-  <div class="form-group">
-    <textarea class="form-control ckeditor" required="required" rows="3" name="editor1" id="editor1"></textarea>
-  </div>
-  <div class="form-group">
-    <div>
-      <button type="submit" class="btn btn-default center-block">提交</button>
-    </div>
-  </div>
+      <div align="center"><button type="submit" class="btn btn-default center-block">提交</button></div>
+
+
 </form>
-
-        <a href="/logout" class="btn btn-danger pull-right">退出登录</a>
+      </div>
     </div>
   </div>
-</div>
-{% endblock%}
+  </aside>
+</article>
+<footer>
+WeBlog&nbsp;&nbsp;&nbsp;<a href="/">西安电子科技大学</a>
+</footer>
+<script>
+	if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+		(function(){
+			window.scrollReveal = new scrollReveal({reset: true});
+		})();
+	};
+</script>
+</body>
+</html>
