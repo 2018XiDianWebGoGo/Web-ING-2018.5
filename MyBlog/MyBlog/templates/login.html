@@ -1,13 +1,92 @@
-{% extends "base.html" %}
-{% block title %}登录{% endblock%}
-{% block css %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>登录</title>
+<meta name="keywords" content="登录" />
+<meta name="description" content="登录" />
+<link rel="stylesheet" href="http://lib.baomitu.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="http://lib.baomitu.com/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" crossorigin="anonymous">
+<script src="http://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="http://lib.baomitu.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/book.css" rel="stylesheet">
+<style>
+body, button, input, select, textarea {
+	font-size: 17px;
+}
 @media (min-width: 430px) {
 .container-fluid {
 	width: 408px;
 }
 }
-{% endblock%}
-{% block content %}
+.container-small{
+				max-width: 500px;
+				margin: 10px auto;
+			}
+--color-ripple: rgba(255,255,255,0.8);
+}
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 50px;
+	width: 50px;
+	margin: auto;
+}
+*[data-animation="ripple"] {
+	position: relative; /*Position relative is required*/
+	height: 100%;
+	width: 100%;
+	display: block;
+	outline: none;
+	padding: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	background: linear-gradient(135deg, #e570e7 0%,#79f1fc 100%);
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 14px;
+	font-family: roboto, helvetica;
+	font-weight: 200;
+	letter-spacing: 1px;
+	text-decoration: none;
+	box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+  /*border-radius: 50px;*/
+	-webkit-tap-highlight-color: transparent;
+}
+
+*[data-animation="ripple"]:focus {
+	outline: none;
+}
+
+*[data-animation="ripple"]::selection {
+	background: transparent;
+	pointer-events: none;
+}
+</style>
+<!--[if lt IE 9]>
+<script src="/static/js/modernizr.js"></script>
+<![endif]-->
+<script src="/static/js/scrollReveal.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo" data-scroll-reveal="enter right over 1s"><a href="/"><img src="/static/images/logo.png" width="80px"></a></div>
+  <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s">
+   <a href="/"><span>首页</span><span class="en">Home</span></a>
+   <a href="/profile"><span>我的博客</span><span class="en">Profile</span></a>
+   <a href="/add"><span>发布文章</span><span class="en">Add</span></a>
+   {% if current_user.is_authenticated %}<a href="/logout"><span>退出登录</span><span class="en">Logout</span></a>{% else %}<a href="/login"><span>登录/注册</span><span class="en">Login</span></a>{% endif %}
+  </nav>
+</header>
+<article>
+	<div class="container container-small">
 <div class="container-fluid">
   <h3>
     {% if (msg | length) == 0%}登录{% else %}
@@ -15,8 +94,6 @@
   {% endif %}
   </h3>
 </div>
-<hr style="height:3px;border:none;border-top:3px groove deepskyblue;" />
-<!--分隔线-->
 
 <div class="container-fluid">
 <form class="form-horizontal" id="login" name="login" role="form" method="post">
@@ -43,4 +120,18 @@
   
 </form>
 </div>
-{% endblock%}
+		</div>
+		
+</article>
+<footer>
+WeBlog&nbsp;&nbsp;&nbsp;<a href="/">西安电子科技大学</a>
+</footer>
+<script>
+	if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+		(function(){
+			window.scrollReveal = new scrollReveal({reset: true});
+		})();
+	};
+</script>
+</body>
+</html>
