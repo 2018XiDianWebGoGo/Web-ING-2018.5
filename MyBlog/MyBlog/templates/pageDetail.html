@@ -1,34 +1,64 @@
-{% extends "base.html" %}
-{% block title %}{{blog.title}}{% endblock%}
-{% block css %}
-@media (min-width: 792px) {
-.container-fluid {
-	width: 770px;
-}
-}
-{% endblock%}
-{% block content %}
-		<div class="container-fluid">
-			<h3><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{blog.title}}<div class="pull-right"><a href="/profile"><span class="glyphicon glyphicon-user"></span></a></div></h3>
-		</div>
-		<hr style="height:3px;border:none;border-top:3px groove deepskyblue;" />
-		<!--分隔线-->
-
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="list-group">
-
-						<div class="list-group-item" style="border: 0;">
-							<p class="text-center">
-								<small>发布时间: {{blog.created_date}}</small>
-								<small>&nbsp;&nbsp;作者:{{blog.user.nickname}}</small>
-							</p>
-							<div>{{blog.content | safe}}</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-{% endblock%}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>{{blog.title}}</title>
+<meta name="keywords" content="{{blog.title}}" />
+<meta name="description" content="{{blog.title}}" />
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/about.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="/static/js/modernizr.js"></script>
+<![endif]-->
+<script src="/static/js/scrollReveal.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo" data-scroll-reveal="enter right over 1s"><a href="/"><img src="/static/images/logo.png" width="80px"></a></div>
+  <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s">
+   <a href="/"><span>首页</span><span class="en">Home</span></a>
+   <a href="/profile"><span>我的博客</span><span class="en">Profile</span></a>
+   <a href="/add"><span>发布文章</span><span class="en">Add</span></a>
+   {% if current_user.is_authenticated %}<a href="/logout"><span>退出登录</span><span class="en">Logout</span></a>{% else %}<a href="/login"><span>登录/注册</span><span class="en">Login</span></a>{% endif %}
+  </nav>
+</header>
+<article>
+  <div class="container">
+    <div class="banner">
+      <p data-scroll-reveal="enter top over 2s">{{blog.title}}</p>
+      <p data-scroll-reveal="enter left over 2s after 1s">发布时间: {{blog.created_date}}</p>
+      <p data-scroll-reveal="enter bottom over 2s after 2s">作者:{{blog.user.nickname}}</p>
+    </div>
+<div>{{blog.content | safe}}</div>
+    <div class="about left">
+	<div>{{blog.content | safe}}</div>
+  <h2>Just about me</h2>
+    <ul>
+     <p>西安电子科技大学</p>
+<p>
+西安电子科技大学</p>
+<p>西安电子科技大学</p>
+<p>
+西安电子科技大学
+</p>
+    </ul>
+    <h2>About my blog</h2>
+    <p>域  名：</p>
+</div>
+  </div>
+  </aside>
+</article>
+<footer>
+WeBlog&nbsp;&nbsp;&nbsp;<a href="/">西安电子科技大学</a>
+</footer>
+<script>
+	if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+		(function(){
+			window.scrollReveal = new scrollReveal({reset: true});
+		})();
+	};
+</script>
+</body>
+</html>
