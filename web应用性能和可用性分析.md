@@ -80,7 +80,7 @@ web应用的可用性相比其他传统软件的产品而言，基于全球性�
  9. 早测常测 details
 
 ### 2.4兼容性
-WeBlg网站的布局要符合主流浏览的要求，国内主流浏览器都能完美运行，比如Firefox、chrome、360等浏览器。我们在[browsershots][3]对网站在146种浏览器版本进行了兼容性测试。从结果可以看出，我们网站的兼容性使非常好的。（见压缩包）
+WeBlg网站的布局要符合主流浏览的要求，国内主流浏览器都能完美运行，比如Firefox、chrome、360等浏览器。我们在[browsershots][3]对网站在146种浏览器版本进行了兼容性测试。从结果可以看出，我们网站的兼容性使非常好的。[见压缩包][4]
 
 ### 2.2任务导向：
 
@@ -96,3 +96,4 @@ WeBlg网站的布局要符合主流浏览的要求，国内主流浏览器都能
   [1]: https://www.redarrow.top/
   [2]: https://www.redarrow.top/
   [3]: http://browsershots.org/
+  [4]: https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/blob/master/%E5%85%BC%E5%AE%B9%E6%80%A7%E6%B5%8B%E8%AF%95redarrow.top.rar/
