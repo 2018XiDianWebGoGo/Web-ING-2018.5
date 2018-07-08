@@ -41,7 +41,7 @@
 ![][8] 
 
  2. 动态建模
- ![o_1cht9ldhemi51lgb1qp71at19r6a.png](http://odiyqfo1k.bkt.clouddn.com/o_1cht9ldhemi51lgb1qp71at19r6a.png)
+ ![](https://i.loli.net/2018/07/09/5b42384cd3ae2.png)
  
  
  ## 四、超文本建模
@@ -60,10 +60,10 @@
   [1]: https://i.loli.net/2018/07/09/5b42378c7c2eb.png
   [2]: https://i.loli.net/2018/07/09/5b42378c99385.png
   [3]: https://i.loli.net/2018/07/09/5b42378c99798.png
-  [4]: http://odiyqfo1k.bkt.clouddn.com/o_1cht9ic14a881mfntpt1mltlv7a.png
-  [5]: http://odiyqfo1k.bkt.clouddn.com/o_1cht9j98012lb1j6q15t74s2cjga.png
-  [6]: http://odiyqfo1k.bkt.clouddn.com/o_1cht9jsq61refml21hp411te1sn0a.png
-  [7]: http://odiyqfo1k.bkt.clouddn.com/o_1cht9k9h7159p1tb9falvub1jq3a.png
-  [8]: http://odiyqfo1k.bkt.clouddn.com/o_1cht9kmau4i01c4gdp2h7c1pf3a.png
-  [9]: http://odiyqfo1k.bkt.clouddn.com/o_1cht9d1me14of1p9ctst1n5uda9a.png
-  [10]: http://odiyqfo1k.bkt.clouddn.com/o_1cht998g91da0rs01qj91t8i1s1qa.png
+  [4]: https://i.loli.net/2018/07/09/5b4238208fee5.png
+  [5]: https://i.loli.net/2018/07/09/5b4238209e06f.png
+  [6]: https://i.loli.net/2018/07/09/5b42384d719d1.png
+  [7]: https://i.loli.net/2018/07/09/5b42384d85885.png
+  [8]: https://i.loli.net/2018/07/09/5b42384d980fa.png
+  [9]: https://i.loli.net/2018/07/09/5b42389b32fbe.png
+  [10]: https://i.loli.net/2018/07/09/5b423899dc5a3.png
