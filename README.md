@@ -6,7 +6,7 @@
 - Task4: [Web应用建模](https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/wiki) ------------- Done
 - Task5: [Web应用架构设计报告](https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/wiki/Web%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%8A%A5%E5%91%8A) ------------- Done
 - Task6: [Web应用设计](https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/wiki) ------------- Done
-- Task7: [Web应用构建与部署](http://www.redarrow.top/) ------------- Done
+- Task7: [Web应用构建与部署](https://www.redarrow.top/) ------------- Done
 - Task8: Web应用测试 ------------- 
 - Task9: [Web应用运维](https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/wiki/Task9-%E8%BF%90%E7%BB%B4) ------------- Done
 - Task11: [Web应用性能和可用性分析](https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/blob/master/web%E5%BA%94%E7%94%A8%E6%80%A7%E8%83%BD%E5%92%8C%E5%8F%AF%E7%94%A8%E6%80%A7%E5%88%86%E6%9E%90.md) ------------- Done
