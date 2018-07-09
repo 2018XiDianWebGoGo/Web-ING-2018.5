@@ -24,6 +24,66 @@
 
 ![](https://ws1.sinaimg.cn/large/ea577d5dly1frmcd7jv03j20c20c00tv.jpg)
 
+## 开发环境配置
+
+- Python版本：2.7.12
+- 所有依赖包及其版本号：
+
+```
+click==6.7
+Flask==0.12.2
+Flask-Login==0.4.1
+Flask-MySQLdb==0.2.0
+Flask-Script==2.0.6
+Flask-SQLAlchemy==2.3.2
+gunicorn==19.7.1
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+mysqlclient==1.3.12
+pkg-resources==0.0.0
+SQLAlchemy==1.2.7
+Werkzeug==0.14.1
+```
+
+## 部署说明
+
+操作系统：Debian 7 32Bit
+
+1. 安装：`apt-get install nginx mysql-server python-dev libmysqlclient-dev git --reinstall` 
+
+2. 配置数据库
+
+3. 安装依赖包：`pip install Flask-Script Flask-SQLAlchemy Flask-Login Flask-MySQLdb`
+
+4. 上传代码
+
+5. 启动服务器：`gunicorn -D -w 3 -b 127.0.0.1:8000 MyBlog:app`
+
+6. 配置Nginx服务器
+
+   ```nginx
+   server {
+       listen 80;
+       server_name www.redarrow.top;
+   	rewrite ^(.*) https://$server_name$1 permanent;
+     }
+   
+   server {
+       listen 443;
+       server_name www.redarrow.top;
+   
+   	ssl on;
+   	ssl_certificate /root/full_chain.pem;
+   	ssl_certificate_key /root/private.key;
+       location / {
+           proxy_pass http://127.0.0.1:8000;
+           proxy_set_header Host $host;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+       }
+     }
+   ```
+
 ## WeBlog项目开发过程中遇到的问题及解决方案
 
 1. 配置环境时数据库的连接问题：在windows下配置数据库连接时，出现了错误，无法使用pip安装mysql-python模块和flask-mysql模块。原因是某些依赖的包没有Windows版本。
