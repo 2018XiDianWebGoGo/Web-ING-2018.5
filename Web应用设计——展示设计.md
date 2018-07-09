@@ -21,5 +21,5 @@
  - 色彩：采用蓝色和紫色的基调，让用户阅读博客的时候具有较为平静的心态
  - 风格：采用简洁又便捷的设计风格，内容分布集中，模块分割明确
 
-  [1]: http://wx4.sinaimg.cn/mw690/006qSzibly1ft1qhxemjpj30qu0mlqgc.jpg
-  [2]: http://wx3.sinaimg.cn/mw690/006qSzibly1ft1lx337shj30oj068tai.jpg
+  [1]: https://wx4.sinaimg.cn/large/006qSzibly1ft1qhxemjpj30qu0mlqgc.jpg
+  [2]: https://wx3.sinaimg.cn/large/006qSzibly1ft1lx337shj30oj068tai.jpg
