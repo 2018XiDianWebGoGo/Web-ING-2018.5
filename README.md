@@ -2,6 +2,7 @@
 
 - [项目说明与环境配置](https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/blob/master/MyBlog/README.md)
 - [项目部署地址](https://www.redarrow.top)
+- [展示PPT](https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/blob/master/WeBlog.pptx)
 - [Wiki Pages](https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/wiki)
 - Task1: 组建项目团队 ------------- Done
 - Task2: [Web项目建议书](https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/wiki/Web%E9%A1%B9%E7%9B%AE%E5%BB%BA%E8%AE%AE%E4%B9%A6) ------------- Done
