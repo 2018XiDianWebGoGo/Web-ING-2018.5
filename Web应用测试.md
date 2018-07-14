@@ -89,7 +89,7 @@ Cookie是指网站用于辨别身份，进行会话（session）跟踪而存储�
 ![此处输入图片的描述][6]<br>
 ### 五、安全测试
 #### 5.1 数据加密测试
-未做特别加密。
+密码采用了带有salt的MD5加密。
 
 #### 5.2 用户身份验证测试
 用户在未登录时仅有基础的浏览权利。在登录时会对用户进行身份验证，包括账号名与密码，不匹配时系统会报一个错，不允许用户进行登录。
@@ -131,11 +131,11 @@ Web内容对于各类人员、各种访问设备（如桌面浏览器、语音�
 核心功能即编写、管理个人博客完成较好。<br>
 
 
-  [1]: https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/wiki/Web%E9%A1%B9%E7%9B%AE%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6
-  [2]: https://wx2.sinaimg.cn/large/0060lm7Tly1ft2s11ak6oj30u106pjti.jpg
-  [3]: https://wx3.sinaimg.cn/large/0060lm7Tly1ft2s1nevl2j31gs0q44f9.jpg
-  [4]: https://i.loli.net/2018/07/08/5b42188660c2f.png
-  [5]: https://wx2.sinaimg.cn/large/0060lm7Tly1ft2scszkp9j30ey0910ud.jpg
-  [6]: https://wx2.sinaimg.cn/large/0060lm7Tly1ft2sd68fm8j30eg07r0u0.jpg
-  [7]: https://i.loli.net/2018/07/08/5b421cd027574.png
+[1]: https://github.com/2018XiDianWebGoGo/Web-ING-2018.5/wiki/Web%E9%A1%B9%E7%9B%AE%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6
+[2]: https://wx2.sinaimg.cn/large/0060lm7Tly1ft2s11ak6oj30u106pjti.jpg
+[3]: https://wx3.sinaimg.cn/large/0060lm7Tly1ft2s1nevl2j31gs0q44f9.jpg
+[4]: https://i.loli.net/2018/07/08/5b42188660c2f.png
+[5]: https://wx2.sinaimg.cn/large/0060lm7Tly1ft2scszkp9j30ey0910ud.jpg
+[6]: https://wx2.sinaimg.cn/large/0060lm7Tly1ft2sd68fm8j30eg07r0u0.jpg
+[7]: https://i.loli.net/2018/07/08/5b421cd027574.png
 
